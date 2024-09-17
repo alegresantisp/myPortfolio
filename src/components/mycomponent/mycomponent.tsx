@@ -39,7 +39,7 @@ function MyComponent() {
         {
           title: 'Nivel de Inglés',
           description: 'Nivel C2, dominio del idioma.',
-          pdfLink: '/assets/certificate.pdf',
+          pdfLink: '/certificate.pdf',
         },
         // Agrega más tarjetas según lo necesario
       ],
@@ -68,7 +68,7 @@ function MyComponent() {
         {
           title: 'English Proficiency',
           description: 'C2 level, proficient in the language.',
-          pdfLink: '/assets/certificate.pdf',
+          pdfLink: '/certificate.pdf',
         },
         // Add more cards as needed
       ],
@@ -116,7 +116,7 @@ function MyComponent() {
         <div className="flex items-center max-w-5xl mx-auto">
           <div className="flex-shrink-0 mr-8">
             <Image 
-              src="/assets/imagen1.jfif"  
+              src="/imagen1.jfif"  
               alt="Santiago Alegre" 
               width={300} 
               height={300} 
@@ -143,7 +143,7 @@ function MyComponent() {
         <div className="flex flex-wrap gap-4">
           <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-64 h-64 flex flex-col">
             <Image
-              src="/assets/ribuzz.webp"
+              src="/ribuzz.webp"
               alt="Ribuzz Project"
               width={150}
               height={150}
