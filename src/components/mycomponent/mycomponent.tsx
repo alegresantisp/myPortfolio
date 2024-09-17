@@ -101,30 +101,25 @@ function MyComponent() {
 
 
           {/* Projects Section */}
-      <section id="projects" className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8">{t.myProjects}</h2>
-        <div className="flex flex-wrap gap-4">
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-64 h-64 flex flex-col">
-            <Image
-              src="/assets/ribuzz.webp"
-              alt="Ribuzz Project"
-              width={150}
-              height={150}
-              className="rounded object-cover mb-4 w-full h-full"
-            />
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl font-semibold">{t.ribuzz}</h3>
-              <a href="https://ribuzz.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
+          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-64 h-64 flex flex-col" onClick={() => setIsProjectExpanded(!isProjectExpanded)}>
+              <Image
+                src="/assets/ribuzz.webp"
+                alt="Ribuzz Project"
+                width={150}
+                height={150}
+                className="rounded object-cover mb-4 w-full h-full"
+              />
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-semibold">{t.ribuzz}</h3>
+                <a href="https://ribuzz.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
+              </div>
+              {isProjectExpanded && (
+                <p className="mt-4 text-gray-300">
+                  Ribuzz es una plataforma de marketplace y networking diseñada para emprendedores e inversores.
+                </p>
+              )}
             </div>
-            {isProjectExpanded && (
-              <p className="mt-4 text-gray-300">
-                Ribuzz es una plataforma de marketplace y networking diseñada para emprendedores e inversores.
-              </p>
-            )}
-          </div>
-          {/* Agrega más componentes de proyectos aquí */}
-        </div>
-      </section>
+
 
 
 
