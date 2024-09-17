@@ -116,7 +116,7 @@ function MyComponent() {
         <div className="flex items-center max-w-5xl mx-auto">
           <div className="flex-shrink-0 mr-8">
             <Image 
-              src="/imagen1.jfif"  
+              src="/imagen1.png"  
               alt="Santiago Alegre" 
               width={300} 
               height={300} 
