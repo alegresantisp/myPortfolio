@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import { FaReact, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss } from 'react-icons/si'
+import { FaReact, FaGithub, FaLinkedin, FaInstagram, FaNode  } from 'react-icons/fa'
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiMongodb, SiFirebase } from 'react-icons/si'
 import { IoLogoCss3 } from 'react-icons/io'
+import { DiGit } from 'react-icons/di';
 import { MdEmail } from 'react-icons/md'
 import Image from 'next/image'
 import { GrCertificate } from "react-icons/gr";
@@ -32,10 +33,6 @@ function MyComponent() {
           description: 'Vivo en Buenos Aires, Argentina.'
         },
         {
-          title: 'Virtudes',
-          description: 'Curioso, trabajador, empático.'
-        },
-        {
           title: 'Nivel de Inglés',
           description: 'Nivel C2, dominio del idioma.',
           pdfLink: '/certificate.pdf',
@@ -60,10 +57,6 @@ function MyComponent() {
           description: 'I live in Buenos Aires, Argentina.'
         },
         {
-          title: 'Strengths',
-          description: 'Curious, hardworking, empathetic.'
-        },
-        {
           title: 'English Proficiency',
           description: 'C2 level, proficient in the language.',
           pdfLink: '/certificate.pdf',
@@ -79,7 +72,8 @@ function MyComponent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-gray-800 to-purple-900 text-white">
       {/* Navbar */}
-      <nav className="px-4 py-2 bg-gradient-to-br from-purple-900 to-purple-900 rounded-xl shadow-lg sticky top-0 w-full">
+      <nav className="px-4 py-2 bg-gradient-to-br from-purple-900 to-purple-900 rounded-xl shadow-lg sticky top-0 w-full z-50">
+
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap items-center space-x-4 sm:space-x-8">
             {[t.home, t.projects, t.about, t.contact].map((item, index) => (
@@ -124,11 +118,16 @@ function MyComponent() {
             <h1 className="text-3xl sm:text-4xl font-bold mb-2">Santiago Alegre</h1>
             <p className="text-lg sm:text-xl mb-4">{t.espec}</p>
             <div className="flex justify-center sm:justify-start space-x-4">
-              <SiNextdotjs size={24} />
+            <SiNextdotjs size={24} />
               <FaReact size={24} />
               <SiTailwindcss size={24} />
               <IoLogoCss3 size={24} />
               <FaGithub size={24} />
+              <SiTypescript size={24} />
+              <FaNode size={24} />
+              <SiMongodb size={24} />
+              <SiFirebase size={24} />
+              <DiGit size={24} />
             </div>
           </div>
         </div>
