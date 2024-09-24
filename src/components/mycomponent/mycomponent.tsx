@@ -24,6 +24,7 @@ function MyComponent() {
       contact: 'Contacto',
       myProjects: 'Mis Proyectos',
       espec: 'Desarrollador Full Stack especializado en Front End',
+      habitTracker: 'Habit Tracker',
       ribuzz: 'Ribuzz',
       viewProject: 'Ver Proyecto',
       aboutMeTitle: 'Sobre mí',
@@ -48,6 +49,7 @@ function MyComponent() {
       contact: 'Contact',
       myProjects: 'My Projects',
       espec: 'Full Stack Developer specialized in Front End',
+      habitTracker: 'Habit Tracker',
       ribuzz: 'Ribuzz',
       viewProject: 'View Project',
       aboutMeTitle: 'About Me',
@@ -148,6 +150,19 @@ function MyComponent() {
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-lg sm:text-xl font-semibold">{t.ribuzz}</h3>
               <a href="https://ribuzz.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
+            </div>
+          </div>
+          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
+            <Image
+              src="/habittra.png"
+              alt="Habit Tracker"
+              width={150}
+              height={150}
+              className="rounded object-cover mb-4 w-full h-full"
+            />
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold">{t.habitTracker}</h3>
+              <a href="https://habits-sandy-omega.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
             </div>
           </div>
           {/* Agrega más componentes de proyectos aquí */}
