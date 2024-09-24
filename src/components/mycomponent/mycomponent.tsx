@@ -165,11 +165,24 @@ function MyComponent() {
               <a href="https://habits-sandy-omega.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
             </div>
           </div>
-          {/* Agrega más componentes de proyectos aquí */}
+          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
+            <Image
+              src="/foto1.jpeg"
+              alt="VDM"
+              width={150}
+              height={150}
+              className="rounded object-cover mb-4 w-full h-full"
+            />
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold">{t.habitTracker}</h3>
+              <a href="https://vinodemarteoficial.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
+            </div>
+          </div>
+        
         </div>
       </section>
 
-      {/* About Me Section */}
+    
       <section id={t.about.toLowerCase()} className="container mx-auto px-4 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.aboutMeTitle}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
