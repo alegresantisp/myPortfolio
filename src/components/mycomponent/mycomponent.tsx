@@ -154,7 +154,7 @@ function MyComponent() {
           </div>
           <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
             <Image
-              src="/habittra.png"
+              src="/HT.jpeg"
               alt="Habit Tracker"
               width={150}
               height={150}
