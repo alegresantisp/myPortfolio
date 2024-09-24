@@ -25,6 +25,7 @@ function MyComponent() {
       myProjects: 'Mis Proyectos',
       espec: 'Desarrollador Full Stack especializado en Front End',
       habitTracker: 'Habit Tracker',
+      VDM: 'VDM',
       ribuzz: 'Ribuzz',
       viewProject: 'Ver Proyecto',
       aboutMeTitle: 'Sobre mí',
@@ -50,6 +51,7 @@ function MyComponent() {
       myProjects: 'My Projects',
       espec: 'Full Stack Developer specialized in Front End',
       habitTracker: 'Habit Tracker',
+      VDM: 'VDM',
       ribuzz: 'Ribuzz',
       viewProject: 'View Project',
       aboutMeTitle: 'About Me',
@@ -152,7 +154,7 @@ function MyComponent() {
               <a href="https://ribuzz.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
             </div>
           </div>
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
+          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 sm:mt-2 h-64 flex flex-col">
             <Image
               src="/HT.jpeg"
               alt="Habit Tracker"
@@ -165,7 +167,7 @@ function MyComponent() {
               <a href="https://habits-sandy-omega.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
             </div>
           </div>
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
+          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 sm:mt-2 h-64 flex flex-col">
             <Image
               src="/foto1.jpeg"
               alt="VDM"
@@ -174,7 +176,7 @@ function MyComponent() {
               className="rounded object-cover mb-4 w-full h-full"
             />
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg sm:text-xl font-semibold">{t.habitTracker}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold">{t.VDM}</h3>
               <a href="https://vinodemarteoficial.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
             </div>
           </div>
