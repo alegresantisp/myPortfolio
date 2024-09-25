@@ -140,49 +140,44 @@ function MyComponent() {
       {/* Projects Section */}
       <section id={t.projects.toLowerCase()} className="container mx-auto px-4 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.myProjects}</h2>
-        <div className="flex flex-wrap gap-4">
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-64 flex flex-col">
-            <Image
-              src="/ribuzz.webp"
-              alt="Ribuzz Project"
-              width={150}
-              height={150}
-              className="rounded object-cover mb-4 w-full h-full"
-            />
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg sm:text-xl font-semibold">{t.ribuzz}</h3>
-              <a href="https://ribuzz.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
+        <div className="flex flex-wrap gap-4 justify-center">
+          {[{
+            src: "/ribuzz.webp",
+            alt: "Ribuzz Project",
+            name: t.ribuzz,
+            link: "https://ribuzz.vercel.app/"
+          }, {
+            src: "/HT.jpeg",
+            alt: "Habit Tracker",
+            name: t.habitTracker,
+            link: "https://habits-sandy-omega.vercel.app/"
+          }, {
+            src: "/foto1.jpeg",
+            alt: "VDM",
+            name: t.VDM,
+            link: "https://vinodemarteoficial.vercel.app/"
+          }].map((project, index) => (
+            <div key={index} className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-auto flex flex-col justify-between">
+              <div className="h-40 flex items-center justify-center">
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  width={150}
+                  height={150}
+                  className="rounded object-cover mb-4 w-full h-full"
+                />
+              </div>
+              <div className="flex flex-col items-center justify-between mt-auto">
+                <h3 className="text-lg sm:text-xl font-semibold text-center">{project.name}</h3>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline text-center mt-2">
+                  {t.viewProject}
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 sm:mt-2 h-64 flex flex-col">
-            <Image
-              src="/HT.jpeg"
-              alt="Habit Tracker"
-              width={150}
-              height={150}
-              className="rounded object-cover mb-4 w-full h-full"
-            />
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg sm:text-xl font-semibold">{t.habitTracker}</h3>
-              <a href="https://habits-sandy-omega.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
-            </div>
-          </div>
-          <div className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 sm:mt-2 h-64 flex flex-col">
-            <Image
-              src="/foto1.jpeg"
-              alt="VDM"
-              width={150}
-              height={150}
-              className="rounded object-cover mb-4 w-full h-full"
-            />
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg sm:text-xl font-semibold">{t.VDM}</h3>
-              <a href="https://vinodemarteoficial.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">{t.viewProject}</a>
-            </div>
-          </div>
-        
+          ))}
         </div>
       </section>
+
 
     
       <section id={t.about.toLowerCase()} className="container mx-auto px-4 py-16">
