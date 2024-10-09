@@ -9,8 +9,12 @@ import Image from 'next/image'
 import { GrCertificate } from "react-icons/gr";
 import Flag from 'react-world-flags';
 
+
+
 function MyComponent() {
   const [isSpanish, setIsSpanish] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProjectTechs, setSelectedProjectTechs] = useState<React.ReactNode[]>([]); 
 
   const toggleLanguage = () => {
     setIsSpanish(!isSpanish)
@@ -41,7 +45,8 @@ function MyComponent() {
         },
       ],
       mySocialMedia: 'Mis Redes Sociales',
-      footer: 'El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. Si amas lo que haces, tendrás éxito. - Albert Schweitzer'
+      footer: 'El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. Si amas lo que haces, tendrás éxito. - Albert Schweitzer',
+      technologiesUsed: 'Tecnologías Utilizadas' 
     },
     en: {
       home: 'Home',
@@ -67,15 +72,25 @@ function MyComponent() {
         },
       ],
       mySocialMedia: 'My Social Media',
-      footer: 'Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer'
+      footer: 'Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer',
+      technologiesUsed: 'Technologies Used' 
     }
   }
   
   const t = isSpanish ? content.es : content.en
 
+
+  const handleProjectClick = (techs: React.ReactNode[]) => {
+    setSelectedProjectTechs(techs);
+    setIsModalOpen(true);
+};
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-gray-800 to-purple-900 text-white">
-      {/* Navbar */}
       <nav className="px-4 py-2 bg-gradient-to-br from-purple-900 to-purple-900 rounded-xl shadow-lg sticky top-0 w-full z-50">
 
         <div className="flex items-center justify-between">
@@ -106,7 +121,6 @@ function MyComponent() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id={t.home.toLowerCase()} className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
         <div className="flex flex-col items-center sm:flex-row sm:items-start max-w-5xl mx-auto">
           <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-8">
@@ -137,7 +151,6 @@ function MyComponent() {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id={t.projects.toLowerCase()} className="container mx-auto px-4 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.myProjects}</h2>
         <div className="flex flex-wrap gap-4 justify-center">
@@ -145,20 +158,37 @@ function MyComponent() {
             src: "/ribuzz.webp",
             alt: "Ribuzz Project",
             name: t.ribuzz,
-            link: "https://ribuzz.vercel.app/"
+            link: "https://ribuzz.vercel.app/",
+            techs: [
+              <FaReact key="react" size={24} />,
+              <SiNextdotjs key="next" size={24} />,
+              <SiTailwindcss key="tailwind" size={24} />,
+              <SiTypescript key="typescript" size={24} />
+            ]
           }, {
             src: "/HT.jpeg",
             alt: "Habit Tracker",
             name: t.habitTracker,
-            link: "https://habits-sandy-omega.vercel.app/"
+            link: "https://habits-sandy-omega.vercel.app/",
+            techs: [
+              <FaReact key="react" size={24} />,
+              <FaNode key="node" size={24} />,
+              <SiFirebase key="firebase" size={24} />
+            ]
           }, {
             src: "/foto1.jpeg",
             alt: "VDM",
             name: t.VDM,
-            link: "https://vinodemarteoficial.vercel.app/"
+            link: "https://vinodemarteoficial.vercel.app/",
+            techs: [
+              <FaReact key="react" size={24} />,
+              <SiNextdotjs key="next" size={24} />,
+              <SiTailwindcss key="tailwind" size={24} />,
+              <SiTypescript key="typescript" size={24} />
+            ]
           }].map((project, index) => (
             <div key={index} className="bg-gray-700 rounded-lg p-4 cursor-pointer w-full sm:w-64 h-auto flex flex-col justify-between">
-              <div className="h-40 flex items-center justify-center">
+              <div className="h-40 flex items-center justify-center"onClick={() => handleProjectClick(project.techs)}>
                 <Image
                   src={project.src}
                   alt={project.alt}
@@ -178,8 +208,22 @@ function MyComponent() {
         </div>
       </section>
 
+       {/* Modal */}
+       {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black opacity-50" onClick={closeModal}></div>
+          <div className="bg-gray-800 rounded-lg p-6 relative z-10">
+            <button className="absolute top-2 right-2 text-purple-500" onClick={closeModal}>
+              X
+            </button>
+            <h3 className="text-xl font-bold mb-4">{t.technologiesUsed}</h3>
+            <div className="flex justify-center space-x-4">
+              {selectedProjectTechs}
+            </div>
+          </div>
+        </div>
+      )}
 
-    
       <section id={t.about.toLowerCase()} className="container mx-auto px-4 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.aboutMeTitle}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -207,7 +251,6 @@ function MyComponent() {
         </div>
       </section>
 
-      {/* Social Media Section */}
       <section id={t.contact.toLowerCase()} className="container mx-auto px-4 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.mySocialMedia}</h2>
         <div className="flex flex-wrap justify-center space-x-4 sm:space-x-8">
@@ -226,7 +269,6 @@ function MyComponent() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-800 text-center py-8">
         <p className="text-gray-300 italic">
           {t.footer}
