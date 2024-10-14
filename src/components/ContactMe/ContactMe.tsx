@@ -54,7 +54,7 @@ const ContactMe: React.FC<{ isSpanish: boolean }> = ({ isSpanish }) => {
           from_email: values.email,
           message: values.message,
         },
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!     
+        process.env.REACT_APP_EMAILJS_PUBLIC!     
       )
 
       console.log('Correo enviado:', result.text)
