@@ -8,6 +8,7 @@ import { MdEmail } from 'react-icons/md'
 import Image from 'next/image'
 import { GrCertificate } from "react-icons/gr";
 import Flag from 'react-world-flags';
+import ContactMe from '../ContactMe/ContactMe'
 
 
 
@@ -268,6 +269,8 @@ function MyComponent() {
           </a>
         </div>
       </section>
+
+      <ContactMe isSpanish={isSpanish} />
 
       <footer className="bg-gray-800 text-center py-8">
         <p className="text-gray-300 italic">

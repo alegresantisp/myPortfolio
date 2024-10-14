@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^2.1.9",
+    "emailjs-com": "^3.2.0",
+    "formik": "^2.4.6",
     "framer-motion": "^11.5.4",
     "i18next": "^23.15.1",
     "next": "14.2.11",
@@ -17,7 +20,8 @@
     "react-dom": "^18",
     "react-i18next": "^15.0.2",
     "react-icons": "^4.3.1",
-    "react-world-flags": "^1.6.0"
+    "react-world-flags": "^1.6.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
